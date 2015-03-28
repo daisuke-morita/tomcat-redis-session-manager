@@ -529,9 +529,7 @@ public class RedisSessionManager extends ManagerBase implements Lifecycle {
     try {
       session = (RedisSession)createEmptySession();
 
-      log.trace("Start deserializeInto " + id);
       serializer.deserializeInto(data, session, metadata);
-      log.trace("End deserializeInto " + id);
 
       session.setId(id);
       session.setNew(false);
